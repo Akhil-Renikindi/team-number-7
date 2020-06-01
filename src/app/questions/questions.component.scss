@@ -1,0 +1,46 @@
+
+.character{
+    color:#6d6c6c;
+    font-size: x-large;
+}
+.coding{
+    color:#6d6c6c;
+    font-size: x-large;
+}
+.english{
+    color:#6d6c6c;
+    font-size: x-large;
+}
+.finish-test{
+    background-color: #53a7a8;
+    display: inline-block;
+    width:200px;
+    height: 40px;
+    margin: 30px;
+    border-radius: 20px;
+    input{
+        margin-top: 6px;
+        margin-left: 8px;
+        color:white;
+        background: none;
+        border:none;
+        font-size: medium;
+    }
+}
+button{
+    border-radius: 20px;
+    width: 30px;
+    height: 30px;
+}
+.agree{
+    border:solid #53a7a8 1px;
+}
+.disagree{
+    border: solid rgb(182, 76, 76) 1px;
+}
+.agree-colour{
+    color: #53a7a8;
+}
+.disagree-colour{
+    color:rgb(182, 76, 76);
+}

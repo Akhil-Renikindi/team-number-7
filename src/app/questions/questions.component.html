@@ -1,0 +1,40 @@
+<body class="body">
+    <section  *ngFor='let c of character'>
+        <div id="char" >
+            <label class="character">{{c.q}}</label><br>
+            <span class="agree-colour">
+                Agree<button (click)="charagree()" class="agree"></button>&nbsp;&nbsp;
+            </span>
+            <span class="disagree-colour">
+                <button (click)="disagree()" class="disagree"></button>Disagree
+            </span>
+            <hr>
+        </div>
+    </section><br><br>
+    <section  *ngFor='let c of coding'>
+        <div id="cod">
+            <label class="coding">{{c.q}}</label><br>
+            <span class="agree-colour">
+                Agree<button (click)="codagree()" class="agree"></button>&nbsp;&nbsp;
+            </span>
+            <span class="disagree-colour">
+                <button (click)="disagree()" class="disagree"></button>Disagree
+            </span>
+        </div>
+    </section><br><br>
+    <section *ngFor='let e of english'>
+        <div id="eng">
+            <label class="english" >{{e.q}}</label><br>
+            <span class="agree-colour">
+                Agree<button (click)="engagree()" class="agree"></button>&nbsp;&nbsp;
+            </span>
+            <span class="disagree-colour">
+                <button (click)="disagree()" class="disagree"></button>Disagree
+            </span>
+        </div>
+    </section><br><br>
+    <div class="finish-test" (click)="evaluate()">
+        <input type='submit' value='Finish Test'/>
+    </div>
+</body> 
+<app-progress [cc]="charcount"></app-progress>
