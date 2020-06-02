@@ -1,7 +1,5 @@
-import { QuestionsComponent } from './../questions/questions.component';
-import { HttpClientModule } from '@angular/common/http';
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { AssesmentService } from './../assesment.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-progress',
@@ -9,15 +7,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./progress.component.scss']
 })
 export class ProgressComponent implements OnInit {
-  @Input() cc:number;
-  constructor(private route:Router,private http:HttpClientModule) {
-   }
-  ngOnInit(): void {
-    //this.http.get("/questions");
-    
+  n;
+  eng=false;
+  cod=false;
+  get count(){
+    this.n=this.assesmentService.getProgress();
+    if(this.n.cdc<6){
+      this.cod=true;
+    }
+    if(this.n.ec<3){
+      this.eng=true;
+    }
+    return this.n;
   }
-  getD(charcount){
-    debugger;
-  }
+  constructor(private assesmentService:AssesmentService) { }
 
+  ngOnInit(): void {
+  }
 }

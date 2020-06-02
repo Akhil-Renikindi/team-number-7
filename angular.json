@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "proj": {
+    "cmr1": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/proj",
+            "outputPath": "dist/cmr1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -33,6 +33,7 @@
               }
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/theme.less",
               "src/styles.scss"
             ],
@@ -72,18 +73,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "proj:build"
+            "browserTarget": "cmr1:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "proj:build:production"
+              "browserTarget": "cmr1:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "proj:build"
+            "browserTarget": "cmr1:build"
           }
         },
         "test": {
@@ -98,6 +99,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -120,19 +122,23 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "proj:serve"
+            "devServerTarget": "cmr1:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "proj:serve:production"
+              "devServerTarget": "cmr1:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "proj",
+  "defaultProject": "cmr1",
   "cli": {
-    "analytics": "3315dc74-10a2-48e8-bd36-cee7687677b3"
+    "analytics": "31a900fe-f8a7-4c6d-b7f3-b188f63af2b5"
   }
 }
